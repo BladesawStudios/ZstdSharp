@@ -5,9 +5,9 @@
     <LangVersion>9.0</LangVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
-    <Authors>Oleg Stepanischev</Authors>
+    <Authors>Aiden A</Authors>
     <Company>Bladesaw Studios</Company>
-    <Copyright>Copyright $(Authors) $([System.DateTime]::UtcNow.ToString(yyyy))</Copyright>
+    <Copyright>Copyright Oleg Stepanischev 2021-2026</Copyright>
     <Description>Port of the zstd compression library to C#. Fork of ZstdSharp.Port with zstd 1.5.5&apos;s lazy match finder skipping reverted, so the compressor reproduces the byte stream produced by the pre-1.5.5 zstd used to pack The Legend of Zelda: Tears of the Kingdom.</Description>
     <PackageId>BladesawStudios.ZstdSharp</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
