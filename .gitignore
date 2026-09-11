@@ -3,3 +3,4 @@ obj/
 *.user
 src/.vs
 /nugets/
+nupkg/

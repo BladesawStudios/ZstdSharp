@@ -6,18 +6,21 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Authors>Oleg Stepanischev</Authors>
+    <Company>Bladesaw Studios</Company>
     <Copyright>Copyright $(Authors) $([System.DateTime]::UtcNow.ToString(yyyy))</Copyright>
-    <Description>Port of zstd compression library to c#</Description>
-    <PackageId>ZstdSharp.Port</PackageId>
+    <Description>Port of the zstd compression library to C#. Fork of ZstdSharp.Port with zstd 1.5.5&apos;s lazy match finder skipping reverted, so the compressor reproduces the byte stream produced by the pre-1.5.5 zstd used to pack The Legend of Zelda: Tears of the Kingdom.</Description>
+    <PackageId>BladesawStudios.ZstdSharp</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageOutputPath>$(SolutionDir)/../nugets</PackageOutputPath>
-    <PackageProjectUrl>https://github.com/oleg-st/ZstdSharp</PackageProjectUrl>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)../../nupkg</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/BladesawStudios/ZstdSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BladesawStudios/ZstdSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageTags>zstd zstandard port compression</PackageTags>
+    <PackageTags>zstd zstandard port compression totk meshcodec</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Version>0.8.8</Version>
+    <Version>0.8.8.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
