@@ -1,4 +1,4 @@
-# ZstdSharp (Bladesaw fork)
+# ZstdSharp (Forked for use in TotK)
 
 [![NuGet package](https://img.shields.io/nuget/v/ZstdSharp.Port.svg?logo=NuGet)](https://www.nuget.org/packages/ZstdSharp.Port)
 [![NuGet package](https://img.shields.io/nuget/dt/ZstdSharp.Port?logo=NuGet)](https://www.nuget.org/packages/ZstdSharp.Port)
