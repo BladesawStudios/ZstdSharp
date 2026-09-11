@@ -1,24 +1,5 @@
 # ZstdSharp (Bladesaw fork)
 
-> **This is a fork.**
->
-> It differs from [upstream ZstdSharp](https://github.com/oleg-st/ZstdSharp) by two lines in
-> `src/ZstdSharp/Unsafe/ZstdLazy.cs`, which revert zstd commit `a3c3a38b` ("[lazy] Skip over
-> incompressible data", released in zstd 1.5.5). That commit is a speed optimisation for the
-> lazy match finders, but it changes the bytes they emit.
->
-> *The Legend of Zelda: Tears of the Kingdom* packed its assets with a pre-1.5.5 zstd, so
-> reverting it lets [McSharp](https://github.com/BladesawStudios/McSharp) re-encode
-> `.bfres.mc` files byte-identically to the retail game. With this fork McSharp reproduces
-> all 12,392 retail model files exactly; with upstream it reproduces 98.6% of them.
->
-> Callers also need `ZSTD_c_useRowMatchFinder = ZSTD_ps_disable` and
-> `ZSTD_c_blockSplitterLevel = 1`; those are plain parameters and need no fork.
->
-> Everything below is upstream's README.
-
----
-
 [![NuGet package](https://img.shields.io/nuget/v/ZstdSharp.Port.svg?logo=NuGet)](https://www.nuget.org/packages/ZstdSharp.Port)
 [![NuGet package](https://img.shields.io/nuget/dt/ZstdSharp.Port?logo=NuGet)](https://www.nuget.org/packages/ZstdSharp.Port)
 
