@@ -2089,7 +2089,16 @@ namespace ZstdSharp.Unsafe
                     /* jump faster over incompressible sections */
                     nuint step = ((nuint)(ip - anchor) >> 8) + 1;
                     ip += step;
-                    ms->lazySkipping = step > 8 ? 1 : 0;
+                    /* FORK CHANGE - do not "fix" this on rebase.
+                     * Upstream zstd commit a3c3a38b ("[lazy] Skip over incompressible
+                     * data", first released in 1.5.5) stops inserting every position into
+                     * the hash table once the match finder has skipped far enough ahead.
+                     * It is a pure speed optimisation, but it changes the emitted stream.
+                     * Tears of the Kingdom's assets were packed with a pre-1.5.5 zstd, so
+                     * keeping lazySkipping at 0 restores the older match finder behaviour
+                     * and lets McSharp re-encode .bfres.mc files byte-identically.
+                     * Verified against all 12,392 model files in the retail game. */
+                    ms->lazySkipping = 0;
                     continue;
                 }
 
@@ -2469,7 +2478,16 @@ namespace ZstdSharp.Unsafe
                 {
                     nuint step = (nuint)(ip - anchor) >> 8;
                     ip += step + 1;
-                    ms->lazySkipping = step > 8 ? 1 : 0;
+                    /* FORK CHANGE - do not "fix" this on rebase.
+                     * Upstream zstd commit a3c3a38b ("[lazy] Skip over incompressible
+                     * data", first released in 1.5.5) stops inserting every position into
+                     * the hash table once the match finder has skipped far enough ahead.
+                     * It is a pure speed optimisation, but it changes the emitted stream.
+                     * Tears of the Kingdom's assets were packed with a pre-1.5.5 zstd, so
+                     * keeping lazySkipping at 0 restores the older match finder behaviour
+                     * and lets McSharp re-encode .bfres.mc files byte-identically.
+                     * Verified against all 12,392 model files in the retail game. */
+                    ms->lazySkipping = 0;
                     continue;
                 }
 
